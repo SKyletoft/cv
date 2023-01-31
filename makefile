@@ -6,9 +6,13 @@ sv.pdf: sv.tex
 en.pdf: en.tex
 	tectonic en.tex
 
-install: both ../samuel.kyletoft.se
+../samuel.kyletoft.se/cv/sv/CV.pdf: sv.pdf ../samuel.kyletoft.se
 	cp sv.pdf ../samuel.kyletoft.se/cv/sv/CV.pdf
+
+../samuel.kyletoft.se/cv/en/CV.pdf: en.pdf ../samuel.kyletoft.se
 	cp en.pdf ../samuel.kyletoft.se/cv/en/CV.pdf
+
+install: ../samuel.kyletoft.se/cv/sv/CV.pdf ../samuel.kyletoft.se/cv/en/CV.pdf
 
 clean:
 	-rm sv.pdf
